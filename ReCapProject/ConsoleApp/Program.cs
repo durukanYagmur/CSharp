@@ -29,7 +29,7 @@ namespace ConsoleApp
 
             //brandManager.Add(brand);
 
-            foreach (var brando in brandManager.GetAll())
+            foreach (var brando in brandManager.GetAll().Data)
             {
                 Console.WriteLine(brando.BrandId + " " + brando.BrandName);
             }
@@ -38,16 +38,16 @@ namespace ConsoleApp
 
             //colorManager.Add(color);
 
-            foreach (var caro in colorManager.GetAll())
+            foreach (var caro in colorManager.GetAll().Data)
             {
                 Console.WriteLine(caro.ColorId + " " + caro.ColorName);
                 
             }
             Console.WriteLine();
 
-            Console.WriteLine(carManager.GetCarsById(1).Description);
-            Console.WriteLine(brandManager.GetById(2).BrandName);
-            Console.WriteLine(colorManager.GetById(3).ColorName);
+            Console.WriteLine(carManager.GetCarsById(1).Data.Description);
+            Console.WriteLine(brandManager.GetById(2).Data.BrandName);
+            Console.WriteLine(colorManager.GetById(3).Data.ColorName);
 
             
         }
@@ -56,12 +56,19 @@ namespace ConsoleApp
         {
             Console.WriteLine("CarName----------BrandName----------ColorName----------DailyPrice");
 
-            foreach (var car in carManager.GetCarDetails())
-            {
-                Console.WriteLine(car.CarName + "       " + car.BrandName + "          " + car.ColorName + "           " + car.DailyPrice);
+            var result = carManager.GetCarDetails();
 
+            if (result.Success)
+            {
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine(car.CarName + "      " + car.BrandName + "          " + car.ColorName + "        " + car.DailyPrice);
+                }
             }
-            Console.WriteLine();
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
         }
     }
 }
