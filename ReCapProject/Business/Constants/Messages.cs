@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,6 +20,10 @@ namespace Business.Constants
         public static string SystemBuilding = "System is building";
         public static string NotReturned = "The car is not returned yet";
         public static string SuccessfulRent = "Renting is successful";
-
+        public static string ImageDeleted = "Image is deleted";
+        public static string ImageAdded = "Image is added";
+        public static string CannotAdd = "Image limit is full";
+        public static string ImageNotExist = "Image does not exist";
+        public static string CarNotExists = "Car does not exist";
     }
 }
