@@ -1,6 +1,8 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -25,5 +27,13 @@ namespace Business.Constants
         public static string CannotAdd = "Image limit is full";
         public static string ImageNotExist = "Image does not exist";
         public static string CarNotExists = "Car does not exist";
+
+        public static string AuthorizationDenied = "Authorization is denied";
+        public static string  UserRegistered = "User is registered";
+        public static string UserNotFound = "User couldnt found";
+        public static string PasswordError = "Wrong password";
+        public static string SuccessfulLogin = "Logined successfully";
+        public static string UserAlreadyExists = "The user is already exist";
+        public static string AccessTokenCreated = "Access token is created";
     }
 }

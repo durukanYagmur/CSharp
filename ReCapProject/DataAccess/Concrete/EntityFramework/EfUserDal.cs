@@ -1,4 +1,5 @@
 ﻿using Core.DataAccess.EntityFramework;
+using Core.Entities.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -9,5 +10,9 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfUserDal : EfEntityRepositoryBase<User, RentCarContext>, IUserDal
     {
+        public List<OperationClaim> GetClaims(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
