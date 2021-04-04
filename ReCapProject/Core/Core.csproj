@@ -18,4 +18,9 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Aspects\Autofac\Transaction\" />
+    <Folder Include="Aspects\Performance\" />
+  </ItemGroup>
+
 </Project>
